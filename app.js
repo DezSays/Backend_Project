@@ -10,12 +10,18 @@ const app = express();
 
 const port = 3000;
 
-//magic lines
-// router.use(express.urlencoded({extended: false})); 
+// const authLogin = (req, res, next) => {
+//     //check to see if username is on the session
 
-// router.use(express.json());
+//     if(req.session.username){
+//         next()
+//     }
+//     else{
+//         res.redirect('/login')
+//     }
+// };
 
-const db = require('./models/database');
+// const db = require('../models');
 
 app.use(express.static('public'));
 
@@ -35,11 +41,16 @@ app.set('view engine', 'ejs');
 
 
 
-
-
+//magic lines
+app.use(express.urlencoded({extended: false})); 
+app.use(express.json());
 
 //routes
 app.use(require('./routes/index'));
+app.use(require('./routes/transactions'));
+app.use(require('./routes/login'));
+app.use(require('./routes/addItems'));
+app.use(require('./routes/registration'));
 
 
 app.listen(port, ()=>{
