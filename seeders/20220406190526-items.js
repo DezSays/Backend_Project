@@ -13,16 +13,26 @@ module.exports = {
     */
 
 
-    //  await queryInterface.bulkInsert('items', [{
-    //    category: 'furniture',
-    //    listingName: 'chair',
-    //    listingDescription: 'big chair',
-    //    listingPrice: 5,
-    //    inCart: false,
-    //    userID: 1,
-    //    createdAt: new Date(),
-    //    updatedAt: new Date()
-    //  }], {});
+     await queryInterface.bulkInsert('items', [{
+       category: 'furniture',
+       listingName: 'chair',
+       listingDescription: 'big chair',
+       listingPrice: 5,
+       inCart: false,
+       userID: 1,
+       createdAt: new Date(),
+       updatedAt: new Date()
+     },
+     {
+      category: 'furniture',
+      listingName: 'chair 2',
+      listingDescription: 'big chair',
+      listingPrice: 5,
+      inCart: false,
+      userID: 1,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }], {});
   },
 
   async down (queryInterface, Sequelize) {
