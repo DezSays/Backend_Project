@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs'); //hash and salt our password
-const db = require('../models/database');
+const db = require('../models');
 
 router.get('/registration', (req,res) => {
 
