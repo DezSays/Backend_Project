@@ -11,5 +11,27 @@
 </head>
 <body>
 <h1>Home Page</h1>
+
+  <ul>
+
+
+    <% itemsdata.forEach(function(thing){ %>
+
+      <li class="span3">
+        <div class="thumbnail">
+        <a  href="product_details.html"><img src="themes/images/products/6.jpg" alt=""/></a>
+        <div class="caption">
+          <h5>Product name</h5>
+          <p> 
+            <%= thing.listingName %> <%= thing.listingDescription %>
+          </p>
+          <h4 style="text-align:center"><a class="btn" href="product_details.html"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">$222.00</a></h4>
+        </div>
+        </div>
+      </li>
+    <% }) %>
+
+
+  </ul>
 </body>
 </html>

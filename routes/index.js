@@ -1,5 +1,6 @@
 
 const express = require('express');
+const db = require('../models');
 
 const router = express.Router()
 
@@ -14,11 +15,13 @@ const router = express.Router()
 //     }
 // };
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
 
-    res.render('index')
-
-
+    let items = await db.items.findAll()
+    
+    res.render('index', {
+        itemsdata: items
+    })
 })
 
 
@@ -26,6 +29,7 @@ router.get('/', (req, res) => {
 // add res.redirect for when user clicks on item 
 router.get('/:id', (req, res) => {
 
+    var itemId = req.params.id;
     res.render('itemView')
 
 })
