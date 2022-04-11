@@ -13,29 +13,32 @@ module.exports = {
     */
 
 
-    //  await queryInterface.bulkInsert('items', [{
-    //    category: 'furniture',
-    //    listingName: 'chair',
-    //    listingDescription: 'big chair',
-    //    listingPrice: 5,
-    //    inCart: false,
-    //    userID: 1,
-    //    createdAt: new Date(),
-    //    updatedAt: new Date(),
-    //    imageURL: 
-    //  },
-    //  {
-    //   category: 'furniture',
-    //   listingName: 'chair 2',
-    //   listingDescription: 'big chair',
-    //   listingPrice: 5,
-    //   inCart: false,
-    //   userID: 1,
-    //   createdAt: new Date(),
-    //   updatedAt: new Date(),
-    //   imageURL: 
-    // }], {});
+     await queryInterface.bulkInsert('items', [{
+       category: 'furniture',
+       listingName: 'Gray Sofa',
+       listingDescription: 'Chaise Lounge, 3-Seat, L-Shape Design, Reversible Ottoman Bench',
+       listingPrice: 89.99,
+       inCart: false,
+       userID: 14,
+       createdAt: new Date(),
+       updatedAt: new Date(),
+       imageURL: '../images/itemPictures/blue_chair.jpg'
+     
+    },
+    {
+      category: 'furniture',
+      listingName: 'Blue Chair',
+      listingDescription: 'Milliard Cozy Chair/Faux Fur Saucer Chair for Bedroom/X-Large (Blue)',
+      listingPrice: 89.99,
+      inCart: false,
+      userID: 14,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+      imageURL: '../images/itemPictures/blue_chair.jpg'
+
+  }], {});
   },
+
 
   async down (queryInterface, Sequelize) {
     /**

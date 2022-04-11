@@ -63,7 +63,7 @@
     </form>
     <ul id="topMenu" class="nav pull-right">
 		<li class="">
-			<a href="login" role="button" style="padding-right:0"><span class="btn btn-large btn-primary">Login</span></a>
+			<a href="/login" role="button" style="padding-right:0"><span class="btn btn-large btn-success">Login</span></a>
 	</li>
     </ul>
 </div>
@@ -104,10 +104,36 @@
 	</div>
 <!-- Sidebar end=============================================== -->
 		<h4>Latest Products </h4>
+
+		<ul>
+
+
+			<% itemsdata.forEach(function(thing){ %>
+		
+			  <li class="span3">
+				<div class="thumbnail">
+				<img src='/images/itemPictures/<%= thing.imageURL %>' alt="" width="300px"/></a>
+				<div class="caption">
+				  <h5><%= thing.listingName %> </h5>
+				  <p> 
+					<%= thing.listingDescription %>
+				  </p>
+				  <h4 style="text-align:center"><a class="btn"> </a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">$<%= thing.listingPrice %></a></h4>
+				</div>
+				</div>
+			  </li>
+			<% }) %>
+		
+		
+		  </ul>
+
+
+
+
 			  <ul class="thumbnails">
 				<li class="span3">
 				  <div class="thumbnail">
-					<a  href="product_details.ejs"><img src="../images/noProductImage.jpg" alt="" width="300px"/></a>
+					<img src="../images/noProductImage.jpg" alt="" width="300px"/></a>
 					<div class="caption">
 					  <h5>Product name</h5>
 					  <p> 
@@ -132,7 +158,7 @@
 				</li>
 				<li class="span3">
 				  <div class="thumbnail">
-					<a  href="product_details.html"><img src="../images/noProductImage.jpg" alt="" width="300px"/></a>
+					<img src="../images/noProductImage.jpg" alt="" width="300px"/></a>
 					<div class="caption">
 					  <h5>Product name</h5>
 					  <p> 
@@ -144,7 +170,7 @@
 				</li>
 				<li class="span3">
 				  <div class="thumbnail">
-					<a  href="product_details.html"><img src="../images/noProductImage.jpg" alt="" width="300px"/></a>
+					<img src="../images/noProductImage.jpg" alt="" width="300px"/>
 					<div class="caption">
 					  <h5>Product name</h5>
 					  <p> 
@@ -156,7 +182,7 @@
 				</li>
 				<li class="span3">
 				  <div class="thumbnail">
-					<a  href="product_details.html"><img src="../images/noProductImage.jpg" alt="" width="300px"/></a>
+					<img src="../images/noProductImage.jpg" alt="" width="300px"/>
 					<div class="caption">
 					  <h5>Product name</h5>
 					  <p> 
@@ -168,7 +194,7 @@
 				</li>
 				<li class="span3">
 				  <div class="thumbnail">
-					<a  href="product_details.html"><img src="../images/noProductImage.jpg" alt="" width="300px"/></a>
+					<img src="../images/noProductImage.jpg" alt="" width="300px"/>
 					<div class="caption">
 					  <h5>Product name</h5>
 					  <p> 
