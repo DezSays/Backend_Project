@@ -2,6 +2,7 @@
 const express = require('express');
 const router = express.Router()
 const authLogin = require('../auth/auth');
+
 const db = require('../models');
 
 const findAll = async() => {
@@ -20,6 +21,7 @@ const findAll = async() => {
 
 findAll()
 
+
 // protected
 router.get('/transactions', (req, res) => {
 
@@ -32,7 +34,6 @@ router.all('/transactions/:id', authLogin, (req, res, next) =>{
 })
 
 router.get('/transactions/:id', (req, res) => {
-
 
     res.send('transactions')
 
@@ -110,6 +111,7 @@ router.delete('/transactions/:id', (req, res) => {
         console.log(error);
         res.json([])
     }
+
 
     res.send('transactions')
 
