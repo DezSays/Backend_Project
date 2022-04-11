@@ -28,10 +28,8 @@ router.get('/', async (req, res) => {
 // :id, protected
 // add res.redirect for when user clicks on item
 router.get('/addItems/:id', (req, res) => {
-
     var itemId = req.params.id;
     res.render('itemView')
-
 })
 
 // router.all('/:id', authLogin, (req, res, next) =>{

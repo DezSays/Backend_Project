@@ -9,6 +9,7 @@ const cookieSession = require('cookie-session');
 
 
 const port = 3000;
+app.use(express.static("public"));
 
 // const authLogin = (req, res, next) => {
     //check to see if username is on the session
