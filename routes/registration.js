@@ -1,7 +1,7 @@
 
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcryptjs'); //hash and salt our password
+const bcrypt = require('bcrypt'); //hash and salt our password
 const db = require('../models');
 
 router.get('/registration', (req,res) => {
@@ -22,8 +22,7 @@ router.post('/registration', async (req, res)=>{
 
         // password encrypt
 
-        password = bcrypt.hashSync(password, 8); 
-
+        password = bcrypt.hashSync(password, 8);
 
 
         let emailCheck = await db.users.findAll({where: {email: email}})
@@ -35,19 +34,18 @@ router.post('/registration', async (req, res)=>{
         }
         else{
             let insertRecord = await db.users.create({
-                username: username, 
-                email: email, 
+                username: username,
+                email: email,
                 fullName: fullName,
                 password: password
-                
             })
 
             res.redirect('/login')
         }
 
-    } 
+    }
     catch (error) {
-        
+
         console.log(error);
 
         res.render('registration', {
