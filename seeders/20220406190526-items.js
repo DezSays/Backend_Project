@@ -15,27 +15,18 @@ module.exports = {
 
     //  await queryInterface.bulkInsert('items', [{
     //    category: 'furniture',
-    //    listingName: 'chair',
-    //    listingDescription: 'big chair',
-    //    listingPrice: 5,
+    //    listingName: 'Blue Chair',
+    //    listingDescription: 'Milliard Cozy Chair/Faux Fur Saucer Chair for Bedroom/X-Large (Blue)',
+    //    listingPrice: 89.99,
     //    inCart: false,
-    //    userID: 1,
+    //    userID: 14,
     //    createdAt: new Date(),
     //    updatedAt: new Date(),
-    //    imageURL: 
-    //  },
-    //  {
-    //   category: 'furniture',
-    //   listingName: 'chair 2',
-    //   listingDescription: 'big chair',
-    //   listingPrice: 5,
-    //   inCart: false,
-    //   userID: 1,
-    //   createdAt: new Date(),
-    //   updatedAt: new Date(),
-    //   imageURL: 
+    //    imageURL: '../images/itemPictures/blue_chair.jpg'
+     
     // }], {});
   },
+
 
   async down (queryInterface, Sequelize) {
     /**
