@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
 
 // :id, protected
 // add res.redirect for when user clicks on item 
-router.get('/:id', (req, res) => {
+router.get('/items/:id', (req, res) => {
 
     var itemId = req.params.id;
     res.render('itemView')
