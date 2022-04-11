@@ -1,7 +1,7 @@
 
 const express = require('express');
 const app = express();
-// const cookieSession = require('cookie-session');
+const cookieSession = require('cookie-session');
 
 // const helmet = require('helmet');
 // const passport = require('passport');
@@ -29,11 +29,11 @@ app.set('view engine', 'ejs');
 // app.use(helmet())
 
 
-// app.use(cookieSession({
-//     name: 'session',
-//     keys: ['fhedjklsbsvliughidflugjklbdf'],
-//     maxAge: 14 * 24 * 60 * 60 * 1000
-// }));
+app.use(cookieSession({
+    name: 'session',
+    keys: ['fhedjklsbsvliughidflugjklbdf'],
+    maxAge: 14 * 24 * 60 * 60 * 1000
+}));
 
 // app.use(passport.initialize());
 // app.use(passport.session());
