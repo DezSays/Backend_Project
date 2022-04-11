@@ -18,7 +18,7 @@ const router = express.Router()
 router.get('/', async (req, res) => {
 
     let items = await db.items.findAll()
-    
+
     res.render('index', {
         itemsdata: items
     })
@@ -26,8 +26,8 @@ router.get('/', async (req, res) => {
 
 
 // :id, protected
-// add res.redirect for when user clicks on item 
-router.get('/:id', (req, res) => {
+// add res.redirect for when user clicks on item
+router.get('/addItems/:id', (req, res) => {
 
     var itemId = req.params.id;
     res.render('itemView')

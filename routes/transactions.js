@@ -6,7 +6,7 @@ const router = express.Router()
 const authLogin = (req, res, next) => {
     //check to see if username is on the session
 
-    if(req.session.username){
+    if(req.session.userID){
         next()
     }
     else{
@@ -23,6 +23,13 @@ router.get('/transactions', (req, res) => {
 
 router.all('/transactions', authLogin, (req, res, next) =>{
     next()
+})
+
+router.post('/logout', (req, res)=>{
+
+    req.session = null;
+
+    res.redirect('/login')
 })
 
 module.exports = router;

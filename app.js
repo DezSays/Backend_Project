@@ -1,9 +1,9 @@
 
 const express = require('express');
 const app = express();
+// const cookieSession = require('cookie-session');
 
 // const helmet = require('helmet');
-// const cookieSession = require('cookie-session');
 // const passport = require('passport');
 // require('./auth/passport-config')(passport); //this passes the global instance of passport to config file and invoking function
 
@@ -11,7 +11,7 @@ const app = express();
 const port = 3000;
 
 // const authLogin = (req, res, next) => {
-//     //check to see if username is on the session
+    //check to see if username is on the session
 
 //     if(req.session.username){
 //         next()
@@ -21,10 +21,9 @@ const port = 3000;
 //     }
 // };
 
-// const db = require('../models');
+const db = require('./models');
 
 app.use(express.static('public'));
-
 app.set('view engine', 'ejs');
 
 // app.use(helmet())
@@ -42,7 +41,7 @@ app.set('view engine', 'ejs');
 
 
 //magic lines
-app.use(express.urlencoded({extended: false})); 
+app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
 //routes
