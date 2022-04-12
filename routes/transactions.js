@@ -5,22 +5,6 @@ const authLogin = require('../auth/auth');
 
 const db = require('../models');
 
-const findAll = async() => {
-    try{
-        let records = await db.transactions.findAll(); 
-
-        console.log(records[1].inCart);
-
-        return records
-    }
-    catch(error){
-        return []
-    }
-
-}
-
-findAll()
-
 
 // protected
 router.get('/transactions', async (req, res) => {
