@@ -54,15 +54,21 @@ router.post('/add-items', async (req, res) => {
 
 })
 
-router.delete('/add-items', async (req, res) => {
+router.delete('/add-items/:id', async (req, res) => {
 
-    let id = req.params.id
+    try {
 
-    await db.items.destroy({where: {id: id}})
+        let id = req.params.id
+    
+        let records = await db.items.destroy({where: {id: id}})
 
-    let records = await findAll()
+        res.render("addItems", {records})
+    
+    } catch (error) {
+        console.log(error);
+    }
 
-    res.json(records)
+    res.send('addItems')
 
 })
 
