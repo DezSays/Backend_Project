@@ -18,7 +18,7 @@ const router = express.Router()
 router.get('/', async (req, res) => {
 
     let items = await db.items.findAll()
-console.log(items);
+
     res.render('index', {
         itemsdata: items
     })
