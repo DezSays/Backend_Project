@@ -23,9 +23,12 @@ findAll()
 
 
 // protected
-router.get('/transactions', (req, res) => {
+router.get('/transactions', async (req, res) => {
 
-    res.render('transactions')
+    // let userID = req.session.userID
+    let userID = 14;
+    let records = await db.transactions.findAll({where: {userID: userID}})
+    res.render("transactions", {records: records})
 
 })
 
@@ -43,7 +46,7 @@ router.post('/transactions/:id', async (req, res) => {
 
     try {
 
-        let {inCart, itemID, userID} = req.body;
+        let {inCart, itemID, userID} = req.body; // session id
 
         console.log(inCart, itemID, userID);
 
@@ -83,7 +86,7 @@ router.put('/transactions/:id', async (req, res) => {
     
         // res.json(records)
 
-        res.render("transactions.ejs", {records})
+        res.render("transactions", {records})
     }
     catch(error){
 
@@ -95,7 +98,7 @@ router.put('/transactions/:id', async (req, res) => {
 
 })
 
-router.delete('/transactions/:id', (req, res) => {
+router.delete('/transactions/:id', async (req, res) => {
 
     try {
 
