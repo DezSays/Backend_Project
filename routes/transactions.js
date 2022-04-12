@@ -107,9 +107,12 @@ router.put('/transactions/:id', async (req, res) => {
     res.send('transactions')
 })
 
+
 router.delete('/transactions/:id', async (req, res) => {
 
-    try {
+
+//     try {
+
 
         let id = req.params.id
  
@@ -124,7 +127,8 @@ router.delete('/transactions/:id', async (req, res) => {
 
     res.render('transactions')
 
-})
+
+// })
 
 
 router.post('/logout', (req, res)=>{
