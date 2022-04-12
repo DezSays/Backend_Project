@@ -16,14 +16,14 @@
 	-->
 	<!--<link rel="stylesheet/less" type="text/css" href="themes/less/bootshop.less">
 	<script src="themes/js/less.js" type="text/javascript"></script> -->
-	
-<!-- Bootstrap style --> 
+
+<!-- Bootstrap style -->
 <link id="callCss" rel="stylesheet" href="../css/bootstrap.min.css" media="screen"/>
 <link href="../css/base.css" rel="stylesheet" media="screen"/>
-<!-- Bootstrap style responsive -->	
+<!-- Bootstrap style responsive -->
 <link href="../css/bootstrap-responsive.min.css" rel="stylesheet"/>
 <link href="../css/font-awesome.css" rel="stylesheet" type="text/css">
-<!-- Google-code-prettify -->	
+<!-- Google-code-prettify -->
 <link href="../css/prettify.css" rel="stylesheet"/>
 <!-- fav and touch icons -->
 <link rel="shortcut icon" href="../images/ico/favicon.ico">
@@ -44,7 +44,7 @@
 <div class="span6"><strong>Welcome!</strong></div>
 <div class="span6">
 <div class="pull-right">
-	<a href="transactions"><span class="btn btn-mini btn-danger"><img src="../images/ico-cart.png" alt="cart"> [ # ] Items in your cart </span> </a> 
+	<a href="transactions"><span class="btn btn-mini btn-danger"><img src="../images/ico-cart.png" alt="cart"> [ # ] Items in your cart </span> </a>
 </div>
 </div>
 </div>
@@ -81,8 +81,7 @@
 
 
 		<li class="subMenu open"><a>CATEGORY 1</a>
-
-		</li>
+</li>
 
 		
 	</ul>
@@ -94,9 +93,9 @@
 		<li><a href="/">Home</a> <span class="divider">/</span></li>
 		<li class="active">Login</li>
     </ul>
-	<h3> Login</h3>	
+	<h3> Login</h3>
 	<hr class="soft"/>
-	
+
 	<div class="row">
 		<div class="span4">
 			<div class="well">
@@ -119,29 +118,23 @@
 		<div class="span4">
 			<div class="well">
 			<h5>ALREADY REGISTERED ?</h5>
-			<form>
-			  <div class="control-group">
-				<label class="control-label" for="inputEmail1">Email</label>
-				<div class="controls">
-				  <input class="span3"  type="text" id="inputEmail1" placeholder="Email">
+			<form action="/login" method="POST">
+				<div class="form-group">
+					<label for="inputUsername">User Name</label>
+					<input type="text" name="username" class="form-control" id="inputUsername" placeholder="Enter Username">
 				</div>
-			  </div>
-			  <div class="control-group">
-				<label class="control-label" for="inputPassword1">Password</label>
-				<div class="controls">
-				  <input type="password" class="span3"  id="inputPassword1" placeholder="Password">
+				<div class="form-group">
+					<div class="form-group">
+					<label for="inputPassowrd">Password</label>
+					<input type="password" name="password" class="form-control" id="inputPassword" placeholder="Enter Password">
+					</div>
 				</div>
-			  </div>
-			  <div class="control-group">
-				<div class="controls">
-				  <button type="submit" class="btn">Sign in</button> 
-				</div>
-			  </div>
-			</form>
+				<button type="submit">Sign in</button>
+				</form>
 		</div>
 		</div>
-	</div>	
-	
+	</div>
+
 </div>
 </div></div>
 </div>
@@ -156,7 +149,7 @@
 			 </div>
 			<div class="span3">
 				<h5>INFORMATION</h5>
-				<a href="/registration">REGISTRATION</a>  
+				<a href="/registration">REGISTRATION</a>
 			 </div>
 
 			<div id="socialMedia" class="span4 pull-right">
@@ -165,19 +158,19 @@
 				<a href="https://github.com/trimvu"><img width="60" height="60" src="../images/githubLOGO.jpg" title="Tri V." alt="Tri"/></a>
 				<a href="https://github.com/browneyes303"><img width="60" height="60" src="../images/githubLOGO.jpg" title="Violet M." alt="Violet"/></a>
 				<a href="https://github.com/fdgalvan"><img width="60" height="60" src="../images/githubLOGO.jpg" title="Felipe G." alt="Felipe"/></a>
-			 </div> 
+			 </div>
 		 </div>
-		<p class="pull-right">&copy; Bootshop</p>
-	</div><!-- Container End -->
+		 <p class="pull-right">Original HTML by &copy; Bootshop</p>
+		</div><!-- Container End -->
 	</div>
 <!-- Placed at the end of the document so the pages load faster ============================================= -->
 	<script src="themes/js/jquery.js" type="text/javascript"></script>
 	<script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="themes/js/google-code-prettify/prettify.js"></script>
-	
+
 	<script src="themes/js/bootshop.js"></script>
     <script src="themes/js/jquery.lightbox-0.5.js"></script>
-	
+
 
 </body>
 </html>

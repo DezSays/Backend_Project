@@ -25,6 +25,7 @@ router.post('/login', async (req, res)=>{
     if(result) {
         console.log('Passwords Match!');
         req.session.userID = user.id;
+        console.log(req.session.userID);
         res.redirect('/')
         // res.redirect(`/transactions/${user.id}`);
     } else {
