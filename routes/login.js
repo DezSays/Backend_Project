@@ -40,6 +40,17 @@ catch (error) {
 }
 })
 
+router.get('/login', async (req, res) => {
+
+    let items = await db.items.findAll()
+
+    res.render('login', {
+        itemsdata: items
+    })
+})
+
+
+
     //scrape info from header - done
     // check if user is in db - done
     // encrypt login password - done

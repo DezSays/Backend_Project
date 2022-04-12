@@ -75,33 +75,23 @@
 	<div class="container">
 	<div class="row">
 <!-- Sidebar ================================================== -->
-	<div id="sidebar" class="span3">
-		<div class="well well-small"><a id="myCart" href="transactions"><img src="../images/ico-cart.png" alt="cart"> ## items in your cart<span class="badge badge-success pull-right">$$$</span></a></div>
-		<ul id="sideManu" class="nav nav-tabs nav-stacked">
-			<li class="subMenu open"><a>CATEGORY 1</a>
-			<ul>
-				<li><a href="products.ejs">item</a></li>
-				<li><a href="products.ejs">item 1</a></li>
-				<li><a href="products.ejs">item 2</a></li>
-				<li><a href="products.ejs">item 3</a></li>
-				<li><a href="products.ejs">item 4</a></li>
-				<li><a href="products.ejs">item 5</a></li>
-				<li><a href="products.ejs">item 6</a></li>
-				<li><a href="products.ejs">item 7</a></li>
-				<li><a href="products.ejs">item 8</a></li>
-				<li><a href="products.ejs">item 9</a></li>
-				<li><a href="products.ejs">item 10</a></li>
-				<li><a href="products.ejs">item 11</a></li>
-				<li><a href="products.ejs">item 12</a></li>
-				<li><a href="products.ejs">item 13</a></li>
-				<li><a href="products.ejs">item 14</a></li>
-				<li><a href="products.ejs">item 15</a></li>
-				<li><a href="products.ejs">item 16</a></li>
-			</ul>
-			</li>
-		</ul>
-		<br/>
-	</div>
+
+<div id="sidebar" class="span3">
+	<div class="well well-small"><a id="myCart" href="/transactions"><img src="../images/ico-cart.png" alt="cart"> ## items in your cart<span class="badge badge-success pull-right">$$$</span></a></div>
+	<ul id="sideManu" class="nav nav-tabs nav-stacked">
+		
+		<% itemsdata.forEach(function(thing){ %>
+		
+		
+		<li class="subMenu open"><a><%= thing.listingName %></a>
+		</li>
+		<% }) %>
+	</ul>
+
+
+	<br/>
+</div>
+
 <!-- Sidebar end=============================================== -->
 		<h4>Latest Products </h4>
 
@@ -120,7 +110,7 @@
 				  <p>
 					<%= thing.listingDescription %>
 				  </p>
-				  <h4 style="text-align:center"><a class="btn"> </a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">$<%= thing.listingPrice %></a></h4>
+				  <h4 style="text-align:center"><a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">$<%= thing.listingPrice %></a></h4>
 				</div>
 				</div>
 			  </li>
