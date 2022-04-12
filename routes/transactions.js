@@ -70,28 +70,18 @@ router.post('/transactions/:id', async (req, res) => {
 router.put('/transactions/:id', async (req, res) => {
 
     try{
-        // let userID = req.body.userID;
 
         let userID = req.params.id
-
-        // await db.transactions.update({inCart: true}, {where: {id: req.params.id}})
         
         let records = await db.transactions.findAll({where: {userID: userID}})
 
         console.log(userID);
-    
-        // const records = await findAll(); 
-
-        // console.log(records);
-    
-        // res.json(records)
 
         res.render("transactions", {records})
     }
     catch(error){
 
         console.log(error);
-        res.json([])
     }
 
     res.send('transactions')
@@ -104,17 +94,13 @@ router.delete('/transactions/:id', async (req, res) => {
 
         let id = req.params.id
     
-        await db.transactions.destroy({where: {id: id}})
-    
-        let records = await findAll()
-    
-        res.json(records)
+        let records = await db.transactions.destroy({where: {id: id}})
+
+        res.render("transactions", {records})
     
     } catch (error) {
         console.log(error);
-        res.json([])
     }
-
 
     res.send('transactions')
 
