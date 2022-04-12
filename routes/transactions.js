@@ -95,27 +95,27 @@ router.put('/transactions/:id', async (req, res) => {
 
 })
 
-router.delete('/transactions/:id', (req, res) => {
+// router.delete('/transactions/:id', (req, res) => {
 
-    try {
+//     try {
 
-        let id = req.params.id
+//         let id = req.params.id
     
-        await db.transactions.destroy({where: {id: id}})
+//         await db.transactions.destroy({where: {id: id}})
     
-        let records = await findAll()
+//         let records = await findAll()
     
-        res.json(records)
+//         res.json(records)
     
-    } catch (error) {
-        console.log(error);
-        res.json([])
-    }
+//     } catch (error) {
+//         console.log(error);
+//         res.json([])
+//     }
 
 
-    res.send('transactions')
+//     res.send('transactions')
 
-})
+// })
 
 
 router.post('/logout', (req, res)=>{
