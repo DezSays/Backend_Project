@@ -80,7 +80,7 @@ router.post('/transactions/:id', authLogin, async (req, res) => {
 
     try {
 
-        let {inCart, itemID, userID} = req.body;
+        let {inCart, itemID, userID} = req.body; // session id
 
         // console.log(inCart, itemID, userID);
 
@@ -95,13 +95,14 @@ router.post('/transactions/:id', authLogin, async (req, res) => {
         console.log(error);
 
         res.render('transactions', {
-            error: "error: you cannot add this item"
+            error: "error: you cannot buy this item"
         })
     }
 
 })
 
 router.put('/transactions/:id', async (req, res) => {
+
 
     res.send('transactions')
 })
@@ -111,16 +112,14 @@ router.delete('/transactions/:id', async (req, res) => {
     try {
 
         let id = req.params.id
+ 
+        let records = await db.transactions.destroy({where: {id: id}})
 
-        await db.transactions.destroy({where: {id: id}})
-
-        let records = await findAll()
-
-        res.json(records)
+        res.render("transactions", {records})
+    
 
     } catch (error) {
         console.log(error);
-        res.json([])
     }
 
     res.render('transactions')
